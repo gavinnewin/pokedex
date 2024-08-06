@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tomorrow', sans-serif;
+}
+
+.container {
+    width: 100%;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+nav { 
+    width: 100%;
+    height: 75px;
+    padding: 0 20px; 
+    position:relative;
+    background-image: linear-gradient(#62cff4, #2c67f2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin: 0; 
+}
+
+.title img {
+    max-height: 75px; 
+    height: auto;
+    width: auto;
+}
+
+.search-box {
+    position: relative;
+    width: 350px; 
+    height: 45px; 
+    background-color: white;
+    border-radius: 25px; 
+    padding-left: 40px; 
+    
+}
+
+.search-box:focus-within {
+    outline: 2px solid #f8c828; /* Add a yellow outline when any child element is focused */
+}
+
+
+.search-box input {
+    width: calc(100% - 60px); 
+    height: 100%;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 20px 0 10px;
+    border: none;
+    outline: none;
+    text-decoration: none; 
+    color: inherit; 
+    background: none; 
+}
+
+.search-box input::placeholder {
+    color: #aaa;
+}
+
+.search-box button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 30px;
+    font-size: 20px;
+    cursor: pointer; /* Add this line */
+}
+
+.search-box button:hover{
+    color: #57b9ff;
+}
+
+.search-box img {
+    position: absolute;
+    left: 6px;
+    top: 52%;
+    transform: translateY(-50%) rotate(19deg);
+    height: 35px; 
+    filter: brightness(92%);
+
+    cursor: default; 
+}
+
+h2{
+    letter-spacing: 3px;
+}
+
+.poke-container{
+   display: flex;
+   flex-wrap: wrap;
+   align-items: space-between; 
+   justify-content: center;
+   margin: 0 auto;
+   max-width: auto;
+   padding-top: 20px;
+}
+
+.pokemon{
+    border-radius: 10px;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.6);
+    margin-top: 10px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: visible;
+    margin: 30px;
+    background-color: #e5e7eb;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.pokemon::before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 10px;
+    bottom: -5px; /* Adjust for initial shadow visibility */
+    left: 10%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease-out;
+    transform: scale(1);
+    filter: blur(5px); /* Add some initial blur */
+    z-index: -1; /* Ensure the shadow is behind the card */
+}
+
+.pokemon:hover::before {
+    width: 90%;
+    height: -80px;
+    bottom: -35px; /* Adjust for hover shadow visibility */
+    left: 5%;
+    background: rgba(0, 0, 0, 0.3);
+    filter: blur(10px); /* Increase blur on hover */
+}
+
+.pokemon .img-container{
+ width: 180px;
+ height: 190px;
+ text-align: center;
+}
+
+.pokemon:hover{
+    transform: translateY(-10px);
+}
+
+.pokemon .img-container img{
+   max-width: 90%;
+   padding-top: 5%;
+}
+
+.pokemon .number{
+    color: black;
+    border-radius: 30px ;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    top: 8px;
+    left: 10px;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 20%;
+    height: 80%;
+    border-radius: 10px;
+    text-align: center; /* Center the content */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content img {
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#modalStats {
+    text-align: left;
+}
+
+#modalStats ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#modalStats li {
+    margin: 5px 0;
+}
+
+#modalType li {
+    height: 20%;
+}
