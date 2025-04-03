@@ -151,9 +151,9 @@ h2{
 }
 
 .pokemon .img-container{
- width: 180px;
- height: 190px;
- text-align: center;
+    width: 180px;
+    height: 190px;
+    text-align: center;
 }
 
 .pokemon:hover{
@@ -183,25 +183,29 @@ h2{
     top: 0;
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
+    overflow: hidden; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 5% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 20%;
-    height: 80%;
+    max-width: 500px;
+    max-height: 700px;
     border-radius: 10px;
     text-align: center; /* Center the content */
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 .close {
     color: #aaa;
-    float: right;
+    float: left;
     font-size: 28px;
     font-weight: bold;
 }
@@ -215,12 +219,32 @@ h2{
 
 .modal-content img {
     max-width: 50%;
-    height: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+
 
 #modalStats {
     text-align: left;
+}
+
+#modalNumber{
+    text-align: right;
+    margin-top: -20px;
+    margin-right: 10px;
+}
+
+#modalText{
+    font-weight:bold;
+    margin-top: 7px;
+    text-align: left;
+    font-size: large;
+    margin-left: 20px;
+}
+
+.line{
+    height: 1px;
+    background: grey;
+    margin-top: 30px;
 }
 
 #modalStats ul {
@@ -229,9 +253,18 @@ h2{
 }
 
 #modalStats li {
-    margin: 5px 0;
+    margin: 40px 0;
+    margin-top: 30px;
 }
 
-#modalType li {
-    height: 20%;
+#modalType{
+    background-color: blue;
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    line-height: 1;
+    max-width: fit-content;
+    margin-left: 45%;
 }

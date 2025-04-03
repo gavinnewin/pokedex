@@ -5,6 +5,8 @@ const pokemon_number = 151;
 const search = document.getElementById("search");
 const form = document.getElementById("form");
 const modal = document.getElementById("myModal");
+const body = document.body;
+const modalNumber = document.getElementById("modalNumber"); 
 const modalText = document.getElementById("modalText");
 const span = document.getElementsByClassName("close")[0];
 
@@ -40,6 +42,27 @@ const getAllPokemon  =  async (id) =>{
 };
 fetchPokemons();
 
+const typeColors = {
+    normal: "#A8A878",
+    fire: "#F08030",
+    water: "#6890F0",
+    electric: "#F8D030",
+    grass: "#78C850",
+    ice: "#98D8D8",
+    fighting: "#C03028",
+    poison: "#A040A0",
+    ground: "#E0C068",
+    flying: "#A890F0",
+    psychic: "#F85888",
+    bug: "#A8B820",
+    rock: "#B8A038",
+    ghost: "#705898",
+    dragon: "#7038F8",
+    dark: "#705848",
+    steel: "#B8B8D0",
+    fairy: "#EE99AC"
+};
+
 function createPokemonCard(pokemon){
     const pokemonEl = document.createElement("div");
     pokemonEl.classList.add("pokemon");
@@ -58,15 +81,14 @@ function createPokemonCard(pokemon){
     const pokeInnerHTML = `
         <div class = "img-container">
              <img src="images/pokemon-images/${pokemon.id}.png" alt="${name}"/>
-    </div>
-   <div class = "info">
-        <span class = "number">#${pokemon.id.toString().padStart(3, "0")}</span>
-        <h3 class = "name">${name}</h3>
-         <!--<small class = "type"><span>${poke_types}</span>/<small> v
-    </div>
+        </div>
+        <div class = "info">
+            <span class = "number">#${pokemon.id.toString().padStart(3, "0")}</span>
+            <h3 class = "name">${name}</h3>
+            <!--<small class = "type"><span>${poke_types}</span>/<small> v
+        </div>
         <div class = "stats">
             <h2>Stats</h2>
-        
         </div>`;
         pokemonEl.innerHTML = pokeInnerHTML;
 
@@ -74,20 +96,27 @@ function createPokemonCard(pokemon){
         pokemonEl.addEventListener("click", () => {
             modalImage.src = `images/pokemon-images/${pokemon.id}.png`;
             modalText.innerText = `${name}`;
-            modalType.innerText = `${poke_types[0]}`;
+            modalNumber.innerText = `#${pokemon.id.toString().padStart(3, "0")}`; // Added: Display Pokémon number in modal
+            const type = poke_types[0]; // Get the primary type
+            const typeColor = typeColors[type]; 
+            modalType.innerText = type;
+            modalType.style.backgroundColor = typeColor;
             const statsHTML = `
+                
                 <ul>
-                    <li><strong>${stats[0]}</strong>: ${base_stat[0]}</li>
-                    <li><strong>${stats[1]}</strong>: ${base_stat[1]}</li>
-                    <li><strong>${stats[2]}</strong>: ${base_stat[2]}</li>       
+                    <li><strong>HP</strong>: ${base_stat[0]}</li>
+                    <li><strong>ATK</strong>: ${base_stat[1]}</li>
+                    <li><strong>DEF</strong>: ${base_stat[2]}</li>       
                 </ul>`;
             modalStats.innerHTML = statsHTML;
             
             modal.style.display = "block";
+            document.body.classList.add('no-scroll');
         });
     
         poke_container.appendChild(pokemonEl);
 }
+
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -98,6 +127,7 @@ modal.style.display = "none";
 window.onclick = function(event) {
 if (event.target == modal) {
     modal.style.display = "none";
+    body.classList.remove('no-scroll');
 }
 }
 
@@ -114,4 +144,3 @@ form.addEventListener("submit", (e) =>{
         fetchPokemons();
     }
 });
-
