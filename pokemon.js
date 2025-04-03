@@ -121,6 +121,7 @@ function createPokemonCard(pokemon){
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
 modal.style.display = "none";
+body.classList.remove('no-scroll');
 }
 
 // When the user clicks anywhere outside of the modal, close it
