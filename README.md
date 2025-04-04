@@ -33,11 +33,23 @@ A dynamic Pokédex built with TypeScript, HTML, CSS, and Vite. This project disp
 ---
 
 ## 📁 Folder Structure
-pokedex/ ├── public/ │ └── images/ ├── src/ │ ├── main.ts │ └── style.css ├── index.html ├── vite.config.js ├── package.json ├── tsconfig.json
+```bash
+pokedex/
+├── public/
+│   └── images/
+├── src/
+│   ├── main.ts
+│   └── style.css
+├── index.html
+├── vite.config.js
+├── package.json
+├── tsconfig.json
+
+```
+
 
 ## 📦 Installation
 
-```bash
 # Clone the repo
 git clone https://github.com/gavinnewin/pokedex.git
 cd pokedex
@@ -54,4 +66,19 @@ npm run build
 # Preview the production build locally
 npm run preview
 
+```
+
+## 📷 Screenshots
+
+### Homepage
+![Main View](./screenshots/main.png)
+
+### Search Functionality
+![Search Example](./screenshots/search.png)
+
+### Modal Popup
+![Modal View](./screenshots/modal.png)
+
+### Mobile Responsive Layout
+![Responsive View](./screenshots/responsive.png)
 
