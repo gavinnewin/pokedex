@@ -44,12 +44,12 @@ pokedex/
 ├── vite.config.js
 ├── package.json
 ├── tsconfig.json
-
 ```
 
 
 ## 📦 Installation
 
+```bash
 # Clone the repo
 git clone https://github.com/gavinnewin/pokedex.git
 cd pokedex
