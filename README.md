@@ -34,16 +34,21 @@ A dynamic Pokédex built with TypeScript, HTML, CSS, and Vite. This project disp
 
 ## 📁 Folder Structure
 ```bash
-pokedex/
-├── public/
-│   └── images/
-├── src/
-│   ├── main.ts
-│   └── style.css
+pokemon-app/
+├── images/
+│   ├── pokeball.png
+│   ├── pokedex.webp
+│   ├── search-icon.png
+│   └── pokemon-images/
+│       └── [pokemon image files].png
+├── screenshots/
+│   ├── main.png
+│   ├── modal.png
+│   └── search.png
 ├── index.html
-├── vite.config.js
-├── package.json
-├── tsconfig.json
+├── main.css
+├── pokemon.js
+├── README.md
 ```
 
 
@@ -78,7 +83,3 @@ npm run preview
 
 ### Modal Popup
 ![Modal View](./screenshots/modal.png)
-
-### Mobile Responsive Layout
-![Responsive View](./screenshots/responsive.png)
-
