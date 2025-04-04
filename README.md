@@ -1,6 +1,6 @@
 # Pokédex App
 
-A dynamic Pokédex built with TypeScript, HTML, CSS, and Vite. This project displays the first 151 Pokémon from the PokéAPI. Users can search for specific Pokémon, view base stats, and see additional details in a modal popup. All images are locally hosted and styled with a responsive design.
+A dynamic Pokédex built with  with HTML, CSS, and JavaScript. This project displays the first 151 Pokémon from the PokéAPI. Users can search for specific Pokémon, view base stats, and see additional details in a modal popup. All images are locally hosted and styled with a responsive design.
 
 ![Screenshot of Pokédex](./screenshots/main.png)
 
@@ -17,17 +17,16 @@ A dynamic Pokédex built with TypeScript, HTML, CSS, and Vite. This project disp
 - Browse the first 151 Pokémon
 - Search Pokémon by name
 - Modal popup with detailed stats
-- Animated interactive background
 - Responsive design
-- Fast loading with Vite
+
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **TypeScript**
-- **HTML/CSS**
-- **Vite**
+- **HTML**
+- **CSS**
+- **JavaScript**
 - **PokéAPI** for Pokémon data
 
 ---
@@ -58,18 +57,6 @@ pokemon-app/
 # Clone the repo
 git clone https://github.com/gavinnewin/pokedex.git
 cd pokedex
-
-# Install dependencies
-npm install
-
-# Run in development mode
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview the production build locally
-npm run preview
 
 ```
 
